@@ -2,25 +2,13 @@
 
 A new FRAME-based Substrate node, ready for hacking :rocket:
 
-## Local Development
 
-Follow these steps to prepare a local Substrate development environment :hammer_and_wrench:
-
-### Simple Setup
-
-Install all the required dependencies with a single command (be patient, this can take up to 30
-minutes).
-
-```bash
-curl https://getsubstrate.io -sSf | bash -s -- --fast
-```
-
-### Manual Setup
+## Manual Setup
 
 Find manual setup instructions at the
 [Substrate Developer Hub](https://substrate.dev/docs/en/knowledgebase/getting-started/#manual-installation).
 
-### Build
+## Build
 
 Once the development environment is set up, build the node template. This command will build the
 [Wasm](https://substrate.dev/docs/en/knowledgebase/advanced/executor#wasm-execution) and
@@ -79,15 +67,10 @@ Substrate-based blockchain nodes expose a number of capabilities:
 There are several files in the `node` directory - take special note of the following:
 
 -   [`chain_spec.rs`](./node/src/chain_spec.rs): A
-    [chain specification](https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec) is a
-    source code file that defines a Substrate chain's initial (genesis) state. Chain specifications
-    are useful for development and testing, and critical when architecting the launch of a
-    production chain. Take note of the `development_config` and `testnet_genesis` functions, which
-    are used to define the genesis state for the local development chain configuration. These
-    functions identify some
+    [chain specification](https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec) is a source code file that defines a Substrate chain's initial (genesis) state. Chain specifications are useful for development and testing, and critical when architecting the launch of a production chain. Take note of the `development_config` and `testnet_genesis` functions, which are used to define the genesis state for the local development chain configuration. These functions identify some
     [well-known accounts](https://substrate.dev/docs/en/knowledgebase/integrate/subkey#well-known-keys)
     and use them to configure the blockchain's initial state.
--   [`service.rs`](./node/src/service.rs): This file defines the node implementation. Take note of
+-   [`service.rs`](./node/src/service.rs): This file defines the node     implementation. Take note of
     the libraries that this file imports and the names of the functions it invokes. In particular,
     there are references to consensus-related topics, such as the
     [longest chain rule](https://substrate.dev/docs/en/knowledgebase/advanced/consensus#longest-chain-rule),
